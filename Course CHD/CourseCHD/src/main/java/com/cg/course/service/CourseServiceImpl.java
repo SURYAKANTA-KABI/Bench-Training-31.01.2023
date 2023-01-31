@@ -56,5 +56,9 @@ public class CourseServiceImpl implements CourseService{
 		return course;
 	}
 
-	
+	@Override
+	public void deleteCourse(long parseLong) {
+		list = this.list.stream().filter(e->e.getId()!=parseLong).collect(Collectors.toList());
+		
+	}
 }

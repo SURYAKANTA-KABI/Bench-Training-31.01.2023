@@ -46,6 +46,14 @@ public class MyController {
 	}
 	
 	
+	@DeleteMapping("/courses/{courseId}")
+	public ResponseEntity<HttpStatus> deleteCourse(@PathVariable String courseId) {
+		try {
+			this.courseService.deleteCourse(Long.parseLong(courseId));
+			return new ResponseEntity<>(HttpStatus.OK);
+		}catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	
-	
+}
 }
