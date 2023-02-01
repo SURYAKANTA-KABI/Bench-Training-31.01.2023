@@ -1,6 +1,7 @@
 package com.cg.course.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,7 +32,7 @@ public class MyController {
 	}
 	
 	@GetMapping("/courses/{courseId}")
-	public Course getCourse(@PathVariable long courseId) {
+	public Optional<Course> getCourse(@PathVariable long courseId) {
 		return this.courseService.getCourse(courseId);
 	}
 	

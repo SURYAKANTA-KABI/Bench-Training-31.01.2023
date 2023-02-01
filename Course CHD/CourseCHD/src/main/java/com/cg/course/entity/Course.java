@@ -1,5 +1,8 @@
 package com.cg.course.entity;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "Courses")
 public class Course {
 	private long id;
 	private String title;
@@ -12,7 +15,6 @@ public class Course {
 	}
 	public Course() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public long getId() {
 		return id;
